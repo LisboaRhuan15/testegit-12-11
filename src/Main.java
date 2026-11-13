@@ -35,7 +35,19 @@ public class Main {
 
         System.out.println("\nTabuada do 3:");
         for (int i = 1; i <= 10; i++) {
-            System.out.println("3 x " + i + " = " + (3 * i));
+            System.out.println("3 x " + i + " = " + (3 * i));]
+
+            // ===== INÍCIO: trecho adicionado na branch nova-funcionalidade =====
+            double[] notasExtras = {8.5, 7.0, 9.0, 6.5};
+            double maior = notasExtras[0];
+            for (double nota : notasExtras) {
+                if (nota > maior) {
+                    maior = nota;
+                }
+            }
+            System.out.println("\nMaior nota: " + maior);
+            // ===== FIM: trecho adicionado na branch nova-funcionalidade =====
         }
+
     }
 }
