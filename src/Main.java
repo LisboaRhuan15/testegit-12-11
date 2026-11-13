@@ -1,13 +1,41 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+public class Main {
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+    static double calcularMedia(double[] notas) {
+        double soma = 0;
+        for (double nota : notas) {
+            soma += nota;
+        }
+        return soma / notas.length;
+    }
+
+
+    static String situacao(double media) {
+        if (media >= 7) {
+            return "Aprovado";
+        } else if (media >= 5) {
+            return "Recuperação";
+        } else {
+            return "Reprovado";
+        }
+    }
+
+    public static void main(String[] args) {
+        String nome = "Maria";
+        double[] notas = {8.5, 7.0, 9.0, 6.5};
+
+        System.out.println("Aluno: " + nome);
+
+        for (int i = 0; i < notas.length; i++) {
+            System.out.println("Nota " + (i + 1) + ": " + notas[i]);
+        }
+
+        double media = calcularMedia(notas);
+        System.out.printf("Média: %.2f%n", media);
+        System.out.println("Situação: " + situacao(media));
+
+        System.out.println("\nTabuada do 3:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("3 x " + i + " = " + (3 * i));
+        }
+    }
 }
